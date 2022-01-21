@@ -11,7 +11,7 @@ import tornado.ioloop
 import tornado.web
 
 # ticker/s to be charted
-df = yf.Ticker("MSFT").history(period="9mo")
+df = yf.Ticker("GOOG").history(period="9mo")
 
 # Creating the chart
 figdata = BytesIO()
@@ -20,13 +20,17 @@ mpf.plot(df, style="yahoo",type="candle", show_nontrading=False, mav = 100, save
 # Web/frontend section
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        #self.write("Test text")
+        self.render("dashboard.html")
+
+class ImageHandler(tornado.web.RequestHandler):
+    def get(self):
         self.set_header('Content-Type', 'image/png')
         self.write(figdata.getvalue())
 
 def make_app():
     return tornado.web.Application([
         (r"/", MainHandler),
+        (r"/img", ImageHandler),
     ])
 
 if __name__ == "__main__":
