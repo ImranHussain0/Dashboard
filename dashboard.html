@@ -7,9 +7,12 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <h1>Chart for Alphabet (GOOG)</h1>
-    <p>Chart is generated at /img <br>
-    Dashboard under development</p>
+    <hr>Chart for
+    {{ tick }}
+    <p> You can query Yahoo Finance and get differnt stock charts with '/img?ticker=[ticker of your choice]'<br>
+        e.g. <a href="http://localhost:8888/img?ticker=MSFT">http://localhost:8888/img?ticker=MSFT </a><br>
+        Ticker has to match Yahoo finance form e.g. AAPL, ^AXJO, TLS.AX, etc</p>
+        Dashboard is still under development.
     <iframe src="/img" name="chart" scrolling="no" frameborder="0" width="800px" height="575px"></iframe>
 </body>
 </html>
