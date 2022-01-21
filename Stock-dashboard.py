@@ -5,7 +5,6 @@
 import mplfinance as mpf
 import yfinance as yf
 import pandas as pd
-import base64
 from io import BytesIO
 # web components
 import tornado.ioloop
@@ -14,14 +13,11 @@ import tornado.web
 # ticker/s to be charted
 df = yf.Ticker("MSFT").history(period="9mo")
 
+# Creating the chart
 figdata = BytesIO()
 mpf.plot(df, style="yahoo",type="candle", show_nontrading=False, mav = 100, savefig=figdata)
 
-# Advanced way to plot moving averge 100. Can be modified for custom indicators.
-# df["100ma"] = df["Open"].rolling(window=100).mean()
-# movingave = [ mpf.make_addplot(df["100ma"])]
-# mpf.plot(df, type="candle", addplot = movingave)
-
+# Web/frontend section
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         #self.write("Test text")
