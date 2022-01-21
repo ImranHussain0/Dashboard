@@ -1,12 +1,12 @@
-# Imran Hussain 20-1-22
-# This program plots charts to a localhost weboage using data taken from Yahoo Finance.
+# I Hussain 20-1-22
+# This program plots charts to a localhost webpage using data taken from Yahoo Finance.
+# Currently under development. Long term plan is to plot the stocks that I own, refreshing daily, and highlight the 100 day MA.
 
-# charting components
+# Charting modules
 import mplfinance as mpf
 import yfinance as yf
-import pandas as pd
 from io import BytesIO
-# web components
+# Web modules
 import tornado.ioloop
 import tornado.web
 
