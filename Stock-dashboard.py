@@ -1,5 +1,6 @@
 # I Hussain 20-1-22
 # This program plots charts to a localhost webpage using data taken from Yahoo Finance.
+# There is a basic seach box that you can use to look up tickers (Yahoo Finance format).
 # Currently under development. Long term plan is to plot the stocks that I own, refreshing daily, and highlight the 100 day MA.
 
 # Charting modules
@@ -10,15 +11,12 @@ from io import BytesIO
 import tornado.ioloop
 import tornado.web
 
-# ticker/s to be charted
-# tick = 'GOOG'
-
-
 # Web/frontend section
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         tick = self.get_argument("ticker","GOOG")
         self.render("dashboard.html", tick = tick)
+
 
 class ImageHandler(tornado.web.RequestHandler):
     def get(self):

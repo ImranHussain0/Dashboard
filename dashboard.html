@@ -6,13 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 </head>
-<body>
-    <hr>Chart for
-    {{ tick }}
-    <p> You can query Yahoo Finance and get differnt stock charts with '/img?ticker=[ticker of your choice]'<br>
-        e.g. <a href="http://localhost:8888/img?ticker=MSFT">http://localhost:8888/img?ticker=MSFT </a><br>
-        Ticker has to match Yahoo finance form e.g. AAPL, ^AXJO, TLS.AX, etc</p>
-        Dashboard is still under development.
-    <iframe src="/img" name="chart" scrolling="no" frameborder="0" width="800px" height="575px"></iframe>
+<script type="text/javascript">
+    function fn1()
+    {
+        var str = document.getElementById("stockInput").value
+        let stockIframe = document.getElementById("stockIframe")
+        let endpoint = "/img"
+        let adsURL = endpoint+"?ticker="+str
+        console.log(adsURL)
+        stockIframe.src = adsURL
+    }
+</script>
+
+<body style="background-color:#E8E9F3;">
+    <h1>Stock chart with 100 day MA</h1>
+    <p> You can query Yahoo Finance and get different stock charts.<br>
+        Ticker has to match Yahoo finance form e.g. AAPL, ^AXJO, TLS.AX, etc <br>
+        Dashboard is still under development. There is currenlty no error handling!</p>
+        <input id="stockInput" placeholder="Enter Ticker">
+        <br>
+        <button onclick="fn1()" id="btn1">Search</button>
+        <br>
+        <iframe id="stockIframe" alt="Stock Chart" scrolling="no" frameborder="0" width="800px" height="575px"></iframe>
 </body>
 </html>
