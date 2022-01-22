@@ -15,6 +15,7 @@ There are some extra features I would like to add eventually so why not make a p
 
 ## What needs to be done:
 * Error handling
+* Input validation
 * CSS - make it pretty!
 * Add features - Multiple stock lists, scrolling charts, etc.
 
