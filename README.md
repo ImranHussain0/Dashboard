@@ -6,8 +6,7 @@ Currently functional but needs development.
 
 
 #### Whats the point of all this:
-One of my trading stratergies requires that I manually observe when the closing price crosses over the 100 day MA.<br>
-There are some extra features I would like to add eventually so why not make a program?<br>
+One of my trading stratergies requires that I manually observe when the closing price crosses over the 100 day MA. There are some extra features I would like to add eventually so why not make a program?<br>
 
 ## Technologies used:
 * Backend is Python - tornado, yfinance, mplfinance
