@@ -25,11 +25,28 @@
     <p> You can query Yahoo Finance and get different stock charts.<br>
         Ticker has to match Yahoo finance format e.g. AAPL, ^AXJO, TLS.AX, AUDUSD=X, etc <br>
         Dashboard is still under development. There is currenlty no error handling!</p>
-        <input id="stockInput" placeholder="Enter Ticker"
-            maxlength="8">
-        <br>
-        <button onclick="fn1()" id="btn1">Search</button>
-        <br>
-        <iframe id="stockIframe" alt="Stock Chart" scrolling="no" frameborder="0" width="800px" height="575px"></iframe>
+    
+    <style>
+        input[type=text]{
+            width: 10%;
+            border:2px solid #aaa;
+            border-radius: 4px;
+            margin:8px 0;
+            outline:none;
+            padding:8px;
+            box-sizing:border-box;
+            transition:.3s; 
+            }   
+        input:focus {
+            border-color:dodgerblue;
+            box-shadow:0 0 8px 0 dodgerblue;
+        }
+    </style>
+        
+    <input type="text" id="stockInput" placeholder="Enter Ticker"
+        maxlength="8">
+    <button style="height:35px;width:70px;border-radius:4px;" onclick="fn1()" id="btn1">Search</button>
+    <br>
+    <iframe id="stockIframe" alt="Stock Chart" scrolling="no" frameborder="0" width="800px" height="575px"></iframe>
 </body>
 </html>
