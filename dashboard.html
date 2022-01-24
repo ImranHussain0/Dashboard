@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 </head>
+
 <script type="text/javascript">
     function fn1()
     {
@@ -22,9 +23,10 @@
 <body style="background-color:#E8E9F3;">
     <h1>Stock chart with 100 day MA</h1>
     <p> You can query Yahoo Finance and get different stock charts.<br>
-        Ticker has to match Yahoo finance format e.g. AAPL, ^AXJO, TLS.AX, etc <br>
+        Ticker has to match Yahoo finance format e.g. AAPL, ^AXJO, TLS.AX, AUDUSD=X, etc <br>
         Dashboard is still under development. There is currenlty no error handling!</p>
-        <input id="stockInput" placeholder="Enter Ticker">
+        <input id="stockInput" placeholder="Enter Ticker"
+            maxlength="8">
         <br>
         <button onclick="fn1()" id="btn1">Search</button>
         <br>
