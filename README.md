@@ -1,6 +1,6 @@
 # Dashboard
 
-This program plots stock charts to a localhost webpage using data pulled from Yahoo Finance.
+This program plots stock charts to a localhost webpage (port 8888) using data pulled from Yahoo Finance.
 There is a basic seach box that you can use to look up tickers (Yahoo Finance format).
 Currently functional but needs development.
 
