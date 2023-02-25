@@ -1,4 +1,4 @@
-<!-- I Hussain - Dashboard project 22-1-22-->
+<!-- I Hussain - Dashboard project 26-2-23-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,47 +6,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-</head>
-
-<script type="text/javascript">
-    function fn1()
-    {
-        var str = document.getElementById("stockInput").value
-        let stockIframe = document.getElementById("stockIframe")
-        let endpoint = "/img"
-        let adsURL = endpoint+"?ticker="+str
-        console.log(adsURL)
-        stockIframe.src = adsURL
-    }
-</script>
-
-<body style="background-color:#E8E9F3;">
-    <h1 style="color:#B95000;"">Stock chart with 100 day MA</h1>
-    <p> You can query Yahoo Finance and get different financial charts.<br>
-        Ticker has to match Yahoo finance format e.g. AAPL, ^AXJO, TLS.AX, AUDUSD=X, etc <br>
-        Dashboard is still under development. There is currenlty no error handling!</p>
-    
     <style>
-        input[type=text]{
-            width: 10%;
-            border:2px solid #aaa;
+        body {
+            background-color: #E8E9F3;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #B95000;
+            font-size: 36px;
+            font-weight: bold;
+            margin: 40px 0;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 20px 0;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 200px;
+            height: 40px;
+            border: 2px solid #aaa;
             border-radius: 4px;
-            margin:8px 0;
-            outline:none;
-            padding:8px;
-            box-sizing:border-box;
-            transition:.3s; 
-            }   
-        input:focus {
-            border-color:dodgerblue;
-            box-shadow:0 0 8px 0 dodgerblue;
+            font-size: 18px;
+            margin: 20px 0;
+            padding: 8px;
+            transition: .3s;
+        }
+        input[type="text"]:focus {
+            border-color: dodgerblue;
+            box-shadow: 0 0 8px 0 dodgerblue;
+            outline: none;
+        }
+        button {
+            height: 40px;
+            width: 100px;
+            border: none;
+            border-radius: 4px;
+            background-color: #B95000;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: .3s;
+        }
+        button:hover {
+            background-color: #ffa366;
+            cursor: pointer;
+        }
+        iframe {
+            display: block;
+            margin: 0 auto;
+            width: 800px;
+            height: 575px;
         }
     </style>
-        
-    <input type="text" id="stockInput" placeholder="Enter Ticker"
-        maxlength="8">
-    <button style="height:35px;width:70px;border-radius:4px;" onclick="fn1()" id="btn1">Search</button>
-    <br>
-    <iframe id="stockIframe" alt="Stock Chart" scrolling="no" frameborder="0" width="800px" height="575px"></iframe>
+</head>
+
+<body>
+    <h1>Stock chart with 100 day MA</h1>
+    <p>You can query Yahoo Finance and get different financial charts.<br>Ticker has to match Yahoo finance format e.g. AAPL, ^AXJO, TLS.AX, AUDUSD=X, etc.<br>Dashboard is still under development. There is currently no error handling!</p>
+    
+    <div style="text-align: center;">
+        <input type="text" id="stockInput" placeholder="Enter Ticker" maxlength="8">
+        <button onclick="fn1()">Search</button>
+    </div>
+
+    <iframe id="stockIframe" alt="Stock Chart" scrolling="no" frameborder="0"></iframe>
+
+    <script type="text/javascript">
+        function fn1() {
+            var str = document.getElementById("stockInput").value;
+            let stockIframe = document.getElementById("stockIframe");
+            let endpoint = "/img";
+            let adsURL = endpoint+"?ticker="+str;
+            console.log(adsURL);
+            stockIframe.src = adsURL;
+        }
+    </script>
 </body>
 </html>
