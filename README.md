@@ -15,7 +15,6 @@ One of my trading stratergies requires that I manually observe when the closing 
 ## What needs to be done:
 * Error handling
 * Input validation
-* CSS - make it pretty!
 * Add features - Multiple stock lists, scrolling charts, etc.
 
 ## Screenshot:
